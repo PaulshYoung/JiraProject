@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Update GitHub Activity
-        uses: PaulshYoung/activity-log@v2
+        uses: PaulshYoung/activity-log
         with:
           GITHUB_USERNAME: "PaulshYoung"
           GITHUB_TOKEN: ${{ secrets.PLEASESUCCESS }} # Ensure this matches the secret name in repository settings
