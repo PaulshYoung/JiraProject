@@ -3,8 +3,8 @@
 name: Update GitHub Activity
 
 on:
-  schedule:
-    - cron: "*/30 * * * *" # Runs every 30 minutes
+  # schedule:
+  #   - cron: "*/30 * * * *" # Runs every 30 minutes
   workflow_dispatch: # Allows manual triggering
 
 jobs:
@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Update GitHub Activity
-        uses: TheDanniCraft/activity-log@v1
+        uses: PaulshYoung/activity-log@v10
         with:
           GITHUB_USERNAME: "PaulshYoung"
           GITHUB_TOKEN: ${{ secrets.PLEASESUCCESS }} # Ensure this matches the secret name in repository settings
+          TARGET_REPOS: '[PaulshYoung/JiraProject]'
+          EVENT_LIMIT: '100'
